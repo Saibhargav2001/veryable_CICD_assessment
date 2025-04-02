@@ -1,13 +1,9 @@
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: github-actions-take-home  # 👈 ADD THIS LINE
 
     steps:
       - name: Checkout Repository
