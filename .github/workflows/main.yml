@@ -44,7 +44,10 @@ jobs:
           docker push "$IMAGE_NAME_LC"
 
       - name: Deploy to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           npm install -g @railway/cli
-          echo "${{ secrets.RAILWAY_TOKEN }}" | railway login --ci
+          railway login
           railway up --service github-actions-take-home
+
