@@ -48,6 +48,6 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           npm install -g @railway/cli
-          railway login
           railway up --service github-actions-take-home
+
 
